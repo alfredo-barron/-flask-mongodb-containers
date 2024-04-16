@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Información de recolectoras</title> 
+</head> 
+<body> 
+	<h1>Recolectora</h1> 
+	<form method="POST" action="/add_collector"> 
+		<label for="key">Clave:</label> 
+		<input type="text" name="key" required> 
+		<br> 
+		<label for="name">Nombre:</label> 
+		<input type="text" name="name" required> 
+		<br> 
+		<label for="address">Dirección:</label> 
+		<input type="text" name="address" required> 
+		<br>
+		<label for="city">Ciudad:</label> 
+		<input type="text" name="city" required> 
+		<br> 
+		<label for="telephone">Telefono:</label> 
+		<input type="text" name="telephone" required> 
+		<br>
+		<label for="manager">Responsable:</label> 
+		<input type="text" name="manager" required> 
+		<br>
+		<label for="email">Correo:</label> 
+		<input type="email" name="email" required> 
+		<br>
+		<button type="submit">Agregar Recolectora</button> 
+	</form> 
+	<br> 
+	<h2>Recolectoras:</h2> 
+	<ul> 
+		{% for collector in collectors %} 
+			<li>{{ collector.key }} (Nombre: {{ collector.name }}, Dirección: {{ collector.address }}, Ciudad: {{ collector.city }},  Telefono: {{ collector.telephone }}, Responsable: {{ collector.manager }}, Correo: {{ collector.email }})</li> 
+		{% endfor %} 
+	</ul> 
+</body> 
+</html> 
